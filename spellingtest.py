@@ -3,8 +3,6 @@ import time
 import os
 import vlc
 
-#just adding a comment
-
 def cls():
     os.system('cls')
 
