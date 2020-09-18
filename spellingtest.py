@@ -22,7 +22,7 @@ def writeFile(fileName, listOfwords):
             f.write("%s\n" % word)
 
 def speakWord(wordTospeak):
-    sayWord = gTTS(text=("The word to spell is "+wordTospeak), lang=language, slow=False)
+    sayWord = gTTS(text=("Spell "+wordTospeak), lang=language, slow=False)
     sayWord.save("sayword.mp3")
     p = vlc.MediaPlayer("sayword.mp3")
     p.play()
@@ -88,7 +88,7 @@ while testAgain:
         print(words[w])
         speakWord(words[w])
         wrongCount = 0
-        time.sleep(2)
+        time.sleep(1)
         cls()
         while spellCheck:
             if wrongCount == 2:
