@@ -1,7 +1,7 @@
 from gtts import gTTS
+from playsound import playsound
 import time
 import os
-import vlc
 
 def cls():
     os.system('cls')
@@ -24,8 +24,8 @@ def writeFile(fileName, listOfwords):
 def speakWord(wordTospeak):
     sayWord = gTTS(text=("Spell "+wordTospeak), lang=language, slow=False)
     sayWord.save("sayword.mp3")
-    p = vlc.MediaPlayer("sayword.mp3")
-    p.play()
+    playsound("sayword.mp3")
+    os.remove("sayword.mp3")
 
 language = 'en'
 words = []
